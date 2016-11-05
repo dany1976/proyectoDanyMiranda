@@ -7,7 +7,7 @@ package Controladores;
 
 /**
  *
- * @author A-Ander
+ alexander lopez palacios
  */
 public class ControladorBuscarProductos {
     
