@@ -22,6 +22,10 @@ public class BuscarProductos extends javax.swing.JDialog {
         
     }
 
+    public BuscarProductos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,12 +36,15 @@ public class BuscarProductos extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtabledatos = new javax.swing.JTable();
-        cboxfiltro = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        txtdatodebusqueda = new javax.swing.JTextField();
+        txtbuscar = new javax.swing.JTextField();
         btnbuscar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        txtdescripcion = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtprecio = new javax.swing.JTextField();
+        EXISTENCIA = new javax.swing.JLabel();
+        txtexistencia = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -45,32 +52,24 @@ public class BuscarProductos extends javax.swing.JDialog {
                 formComponentShown(evt);
             }
         });
+        getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Sitka Small", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Sitka Small", 0, 36)); // NOI18N
         jLabel1.setText("Buscar Productos");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(80, 10, 350, 46);
 
-        jScrollPane1.setToolTipText("");
+        jLabel3.setText("BUSCAR POR CODIGO:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(30, 90, 130, 16);
 
-        jtabledatos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Codigo", "Descripcion", "Cantidad", "Precio"
-            }
-        ));
-        jtabledatos.setToolTipText("");
-        jScrollPane1.setViewportView(jtabledatos);
-
-        cboxfiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CODIGO", "NOMBRE" }));
-
-        jLabel3.setText("BUSCAR POR:");
-
-        txtdatodebusqueda.addActionListener(new java.awt.event.ActionListener() {
+        txtbuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtdatodebusquedaActionPerformed(evt);
+                txtbuscarActionPerformed(evt);
             }
         });
+        getContentPane().add(txtbuscar);
+        txtbuscar.setBounds(170, 80, 150, 30);
 
         btnbuscar.setText("BUSCAR");
         btnbuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -78,62 +77,73 @@ public class BuscarProductos extends javax.swing.JDialog {
                 btnbuscarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnbuscar);
+        btnbuscar.setBounds(350, 80, 90, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(cboxfiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(txtdatodebusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(4, 4, 4)
-                                .addComponent(btnbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1))))
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtdatodebusqueda)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnbuscar)
-                        .addComponent(cboxfiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57))
-        );
+        jLabel2.setText("DESCRIPCION:");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(40, 150, 84, 16);
+
+        txtdescripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtdescripcionActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtdescripcion);
+        txtdescripcion.setBounds(130, 140, 310, 40);
+
+        jLabel4.setText("PRECIO:");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(40, 230, 48, 16);
+
+        txtprecio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtprecioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtprecio);
+        txtprecio.setBounds(130, 220, 310, 40);
+
+        EXISTENCIA.setText("DESCRIPCION:");
+        getContentPane().add(EXISTENCIA);
+        EXISTENCIA.setBounds(40, 300, 84, 16);
+
+        txtexistencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtexistenciaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtexistencia);
+        txtexistencia.setBounds(130, 290, 310, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtdatodebusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdatodebusquedaActionPerformed
+    private void txtbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtbuscarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtdatodebusquedaActionPerformed
+    }//GEN-LAST:event_txtbuscarActionPerformed
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
       
     }//GEN-LAST:event_formComponentShown
 
-    MetodosBuscarProductos metodosbd = new MetodosBuscarProductos();
+    
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
        
-        metodosbd.Buscar(txtdatodebusqueda.getText(), cboxfiltro.getSelectedItem().toString(), jtabledatos);
+        
     }//GEN-LAST:event_btnbuscarActionPerformed
+
+    private void txtdescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdescripcionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtdescripcionActionPerformed
+
+    private void txtprecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtprecioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtprecioActionPerformed
+
+    private void txtexistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtexistenciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtexistenciaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,12 +188,15 @@ public class BuscarProductos extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnbuscar;
-    private javax.swing.JComboBox<String> cboxfiltro;
+    private javax.swing.JLabel EXISTENCIA;
+    public javax.swing.JButton btnbuscar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jtabledatos;
-    private javax.swing.JTextField txtdatodebusqueda;
+    private javax.swing.JLabel jLabel4;
+    public javax.swing.JTextField txtbuscar;
+    public javax.swing.JTextField txtdescripcion;
+    public javax.swing.JTextField txtexistencia;
+    public javax.swing.JTextField txtprecio;
     // End of variables declaration//GEN-END:variables
 }
