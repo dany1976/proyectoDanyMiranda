@@ -5,7 +5,7 @@
  */
 package Controladores;
 
-import Modelo.MetodosBuscarProductos;
+import Modelos.MetodosBuscarProductos;
 import Modelo.MetodosBuscarProductosDAO;
 import Vistas.BuscarProductos;
 import java.awt.event.ActionEvent;

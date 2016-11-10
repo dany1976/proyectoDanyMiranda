@@ -5,7 +5,7 @@
  */
 package Vistas;
 
-import Modelos.MetodosBuscarProductos;
+import Modelos.*;
 
 /**
  *

@@ -1,5 +1,5 @@
 
-package Modelo;
+package Modelos;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
