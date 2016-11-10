@@ -1,15 +1,17 @@
+package Controladores;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controladores;
+
 
 import Modelos.VentasDAO;
 import Vistas.JDventas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
+
 import java.sql.ResultSet;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -29,18 +31,21 @@ public class ControladorVentas implements ActionListener{
 
         this.vistaventas.btnventa.addActionListener(this);
         this.vistaventas.btndetalle.addActionListener(this);
-        this.vistaventas.txtfecha.addActionListener(this);
-        this.vistaventas.txtnit.addActionListener(this);
-        this.vistaventas.txtdireccion.addActionListener(this);
+        
+        this.vistaventas.btnfecha.addActionListener(this);
+        this.vistaventas.btcbc.addActionListener(this);
+        this.vistaventas.btnac.addActionListener(this);
         this.vistaventas.txtcantidad.addActionListener(this);
         
         
         
     }
     public void actionPerformed(ActionEvent E){
-         if (vistaventas.txtfecha== E.getSource())
+         if (vistaventas.btnfecha== E.getSource())
          {
-             //aqui mando a buscar la factura y que me mande la fecha
+             
+             
+             
              
              Calendar calen = new GregorianCalendar();
             int anio = calen.get(Calendar.YEAR);
@@ -53,7 +58,7 @@ public class ControladorVentas implements ActionListener{
             
             VentasDAO nuevaVenta = new VentasDAO();
          ResultSet datosobtenidos;
-         ResultSet consulta;
+        
          
          datosobtenidos =  nuevaVenta.Buscaras(Integer.parseInt(vistaventas.txtfactura.getText()));
             
@@ -82,8 +87,9 @@ public class ControladorVentas implements ActionListener{
                  }
             
          }else
-        if (vistaventas.txtnit== E.getSource())
+        if (vistaventas.btcbc== E.getSource())
          {
+             JOptionPane.showMessageDialog(null,"Holaaaaaaaaaaaa");
              VentasDAO nuevaVenta = new VentasDAO();
          ResultSet datosobtenidos;
          ResultSet consulta;
@@ -112,7 +118,7 @@ public class ControladorVentas implements ActionListener{
                  }        // TODO ad
              }
         else
-            if(vistaventas.txtdireccion== E.getSource()){
+            if(vistaventas.btnac== E.getSource()){
                 
                 VentasDAO nuevaVentaa = new VentasDAO();
     nuevaVentaa.GuardaCliente(Integer.parseInt(vistaventas.txtnit.getText()), vistaventas.txtcliente.getText(), vistaventas.txtdireccion.getText());
@@ -152,7 +158,7 @@ public class ControladorVentas implements ActionListener{
                  }        // TODO ad
              }
         else
-                    if(vistaventas.txtcantidad== E.getSource())
+                    if(vistaventas.btncanti== E.getSource())
                     {
                         grantotal = grantotal + (Integer.parseInt(vistaventas.txtcantidad.getText())*Float.parseFloat(vistaventas.txtprecio.getText()));
                 vistaventas.txttotal.setText(Float.toString(grantotal));
@@ -230,11 +236,12 @@ public class ControladorVentas implements ActionListener{
                 
                 
          }
-         
+    
     }
+    
             
-            
-            
+   
          
     
 }
+

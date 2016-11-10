@@ -1,9 +1,11 @@
+package Modelos;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelos;
+
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -108,11 +110,11 @@ public class VentasDAO {
     }
 
     public Connection getConn() {
-        return Conn;
+        return conn;
     }
 
     public void setConn(Connection Conn) {
-        this.Conn = Conn;
+        this.conn = Conn;
     }
 
     public Conexion getConect() {
@@ -132,19 +134,19 @@ public class VentasDAO {
     }
     
     
-       Connection Conn;
+       Connection conn;
     Conexion conect = new Conexion();
     ResultSet consulta;
     public ResultSet Buscar(int nit){
         
         try{
         JOptionPane.showMessageDialog(null, conect.conectar());
-            Conn = conect.getConexion();
-            Statement comando = Conn.createStatement();
-            ResultSet consulta;
+            conn = conect.getConexion();
+            Statement comando = conn.createStatement();
+            ResultSet datosobtenidos;
             
         
-            consulta = comando.executeQuery("select * from clientes where nit = '"+nit);
+           datosobtenidos = comando.executeQuery("select * from clientes where nit = '"+nit);
             
             
             
@@ -160,12 +162,12 @@ public class VentasDAO {
         
         try{
         JOptionPane.showMessageDialog(null, conect.conectar());
-            Conn = conect.getConexion();
-            Statement comando = Conn.createStatement();
-            ResultSet consulta;
+            conn = conect.getConexion();
+            Statement comando = conn.createStatement();
+            ResultSet datosobtenidos;
             
         
-            consulta = comando.executeQuery("select * from productos where idproducto= '"+idproducto);
+            datosobtenidos = comando.executeQuery("select * from productos where idproducto= '"+idproducto);
             
             
             
@@ -213,8 +215,8 @@ public class VentasDAO {
         
         try{
         JOptionPane.showMessageDialog(null, conect.conectar());
-            Conn = conect.getConexion();
-            Statement comando = Conn.createStatement();
+            conn = conect.getConexion();
+            Statement comando = conn.createStatement();
             ResultSet consulta;
             
         
@@ -233,8 +235,8 @@ public class VentasDAO {
         
         try{
         JOptionPane.showMessageDialog(null, conect.conectar());
-            Conn = conect.getConexion();
-            Statement comando = Conn.createStatement();
+            conn = conect.getConexion();
+            Statement comando = conn.createStatement();
             ResultSet consulta;
             
         
@@ -271,8 +273,8 @@ public class VentasDAO {
         
         try{
             conect.conectar();
-            Conn = conect.getConexion();
-            Statement comando = Conn.createStatement();
+            conn = conect.getConexion();
+            Statement comando = conn.createStatement();
            
             //Editar registro
             

@@ -1,9 +1,11 @@
+package Vistas;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Vistas;
+
 
 import Modelos.Conexion;
 
@@ -38,20 +40,7 @@ public float grantotal;
     }
     
    
-    /*void limpiar()
-    {
-       txtcodigo.setText("");
-       txtdescripcion.setText("");
-       txtcantidad.setText("");
-       txtprecio.setText("");
-       txtexistencia.setText("");
-       txtfactura.setText("");
-       txtdireccion.setText("");
-       txtcliente.setText("");
-       txtnit.setText("");
-       txtfecha.setText("");
-       txttotal.setText("");
-    }*/
+    
 
         
     /**
@@ -94,6 +83,11 @@ public float grantotal;
         jLabel9 = new javax.swing.JLabel();
         txtfactura = new javax.swing.JTextField();
         btndetalle = new javax.swing.JButton();
+        btnfecha = new javax.swing.JButton();
+        btcbc = new javax.swing.JButton();
+        btnac = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        btncanti = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
@@ -378,6 +372,21 @@ public float grantotal;
             }
         });
 
+        btnfecha.setText("Fecha");
+        btnfecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnfechaActionPerformed(evt);
+            }
+        });
+
+        btcbc.setText("Buscar Cliente");
+
+        btnac.setText("Agregar Cliente");
+
+        jButton5.setText("Buscar Producto");
+
+        btncanti.setText("Cantidad");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -390,32 +399,58 @@ public float grantotal;
                         .addGap(18, 18, 18)
                         .addComponent(txttotal, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
-                        .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(172, 172, 172)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(72, 72, 72)
                         .addComponent(jLabel3)))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnventa)
                 .addGap(35, 35, 35)
                 .addComponent(btndetalle)
                 .addGap(242, 242, 242))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton5)
+                            .addComponent(btncanti)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(125, 125, 125)
+                        .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnfecha, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btcbc, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnac, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addGap(26, 26, 26))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(56, Short.MAX_VALUE)
-                .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnfecha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btcbc)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnac)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jButton5)
+                        .addGap(18, 18, 18)
+                        .addComponent(btncanti)))
                 .addGap(27, 27, 27)
                 .addComponent(jLabel3)
                 .addGap(16, 16, 16)
@@ -551,6 +586,12 @@ public float grantotal;
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfacturaActionPerformed
 
+    private void btnfechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfechaActionPerformed
+        // TODO add your handling code here:
+        
+     
+    }//GEN-LAST:event_btnfechaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -597,9 +638,14 @@ public float grantotal;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Descripcion;
     private javax.swing.JLabel Descripcion1;
+    public javax.swing.JButton btcbc;
+    public javax.swing.JButton btnac;
+    public javax.swing.JButton btncanti;
     public javax.swing.JButton btndetalle;
+    public javax.swing.JButton btnfecha;
     public javax.swing.JButton btnventa;
     private javax.swing.JButton jButton2;
+    public javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
