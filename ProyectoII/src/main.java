@@ -1,5 +1,8 @@
 
 import Controladores.ControladorPrincipal;
+import Controladores.Controladoragregar;
+import Modelos.AgregarDAO;
+import Vistas.JDAgregar;
 import Vistas.JFprincipal;
 
 /*
@@ -23,6 +26,14 @@ public class main {
         ControladorPrincipal ControladorPrincipal = new ControladorPrincipal(frmPantallaPrincipal);
         frmPantallaPrincipal.setExtendedState(frmPantallaPrincipal.MAXIMIZED_BOTH);
         frmPantallaPrincipal.setVisible(true);
+        
+        JDAgregar vistaA = new JDAgregar(new JFprincipal(),true);
+        AgregarDAO modeloA = new AgregarDAO();
+        Controladoragregar controlaA = new Controladoragregar(vistaA, modeloA);
+    
+       
+        vistaA.setVisible(true);
+        vistaA.setLocationRelativeTo(null);
         // TODO code application logic here
     }
 }
