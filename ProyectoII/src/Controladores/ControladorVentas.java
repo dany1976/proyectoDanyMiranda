@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Julio
+ * @author Guillermo
  */
 public class ControladorVentas implements ActionListener{
     JDventas vistaventas;

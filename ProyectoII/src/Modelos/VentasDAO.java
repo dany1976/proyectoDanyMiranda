@@ -15,7 +15,7 @@ import Vistas.JDventas;
 
 /**
  *
- * @author Julio
+ * @author Guillermo
  */
 public class VentasDAO {
     String fecha;
